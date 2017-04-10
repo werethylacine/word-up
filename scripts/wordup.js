@@ -350,12 +350,41 @@ function containsOnlyAllowedLetters(word) {
     }
 }
 
+
+// list roughly based on https://www.math.cornell.edu/~mec/2003-2004/cryptography/subs/frequencies.html
+letter_frequencies = ["e", "e", "e", "e", "e", "e",
+                      "t", "t", "t", "t", "t", "t", "t", "t", "t",
+                      "a", "a", "a", "a", "a", "a",
+                      "o", "o", "o", "o", "o", "o",
+                      "i", "i", "i", "i", "i", "i",
+                      "n", "n", "n", "n", "n", "n", "n",
+                      "s", "s", "s", "s", "s", "s",
+                      "r", "r", "r", "r", "r", "r",
+                      "h", "h", "h", "h", "h", "h",
+                      "d", "d", "d", "d",
+                      "l", "l", "l", "l",
+                      "u", "u", "u",
+                      "c", "c", "c",
+                      "m", "m", "m",
+                      "f", "f",
+                      "y", "y",
+                      "w", "w",
+                      "g", "g",
+                      "p", "p",
+                      "b",
+                      "v",
+                      "k",
+                      "x",
+                      "q",
+                      "j",
+                      "z"]
+
 /**
  * Returns a list of 7 randomly chosen letters
  * Each letter will be distinct (no repeats of the same letter)
  */
 function generateAllowedLetters() {
-    return chooseN(7, Object.keys(scrabblePointsForEachLetter));
+    return chooseN(7, letter_frequencies);
 }
 
 /**
